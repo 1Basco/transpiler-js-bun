@@ -1,3 +1,3 @@
 import init from "./src/init";
 
-await init("fib");
+await init("/var/rinha/source.rinha.json");

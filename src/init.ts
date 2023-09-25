@@ -2,15 +2,15 @@ import { evalOutput, writeOutput } from "./helpers";
 import TreeTraversalVisitor from "./visitor";
 
 /**
- * Initializes the function by grabbing the rinha json from the specified astName.
+ * Initializes the function by grabbing the rinha json from the specified path.
  *
- * @param {string} astName - The name of the AST file to grab the rinha json from.
+ * @param {string} path - The path of AST file.
  * @return {Promise<void>} A promise that resolves when the function completes.
  */
-export default async function init(astName: string) {
+export default async function init(path: string) {
   const filePath = "./output/index.js";
-  // grab the rinha json
-  const astJSON = await Bun.file(`./rinha/${astName}.rinha.json`).text();
+
+  const astJSON = await Bun.file(path).text();
 
   const ast = JSON.parse(astJSON);
   const treeTranspiler = new TreeTraversalVisitor();

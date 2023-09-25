@@ -9,6 +9,5 @@ RUN cd ./output && touch index.js
 ADD index.ts ./index.ts
 ADD src/ ./src/
 ADD bun.lockb bun.lockb
-ADD rinha rinha
 
 CMD [ "bun", "run", "start" ]
